@@ -1,0 +1,42 @@
+<screen>
+	<styles>
+		<style
+			name="style_menu_items"
+			bg_opa="0"
+			border_width="0"
+			radius="0"
+			pad_all="0"
+			layout="flex"
+			flex_flow="row"
+		/>
+	</styles>
+
+	<view name="screen_main" style_bg_color="0xFFFFFF">
+		<menu_screen_indicator align="top_mid" y="35" />
+
+		<menubar_bg align="bottom_mid">
+			<lv_obj width="content" height="content" align="center">
+				<style name="style_menu_items" />
+
+				<menu_button name="button_home" image="img_house" image_selected="img_house_selected" text="Home">
+					<subject_set_int_event subject="subject_menu_index" value="0" trigger="clicked" />
+					<subject_set_string_event subject="subject_menu_title" value="Home" trigger="clicked" />
+				</menu_button>
+				<menu_button name="button_star" image="img_star" image_selected="img_star_selected" text="Starred">
+					<subject_set_int_event subject="subject_menu_index" value="1" trigger="clicked" />
+					<subject_set_string_event subject="subject_menu_title" value="Starred" trigger="clicked" />
+				</menu_button>
+				<menu_button name="button_shared" image="img_person" image_selected="img_person_selected" text="Shared">
+					<subject_set_int_event subject="subject_menu_index" value="2" trigger="clicked" />
+					<subject_set_string_event subject="subject_menu_title" value="Shared" trigger="clicked" />
+				</menu_button>
+				<menu_button name="button_files" image="img_file" image_selected="img_file_selected" text="Files">
+					<subject_set_int_event subject="subject_menu_index" value="3" trigger="clicked" />
+					<subject_set_string_event subject="subject_menu_title" value="Files" trigger="clicked" />
+				</menu_button>
+			</lv_obj>
+		</menubar_bg>
+
+		<event_cb callback="screen_main_loaded_cb" trigger="screen_loaded" />
+	</view>
+</screen>

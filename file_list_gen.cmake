@@ -1,0 +1,19 @@
+list(
+  APPEND
+  PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/components/menu_button/menu_button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/menu_screen_indicator/menu_screen_indicator_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/menubar_bg/menubar_bg_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_main/screen_main_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/gdrive_menubar_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/gdrive_menubar.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/font_inter_medium_14_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/font_inter_medium_27_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_house_selected_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_star_selected_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_person_selected_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_file_selected_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_house_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_star_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_person_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/img_file_data.c)

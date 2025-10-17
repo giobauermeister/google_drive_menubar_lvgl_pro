@@ -1,0 +1,58 @@
+<component>
+	<previews>
+		<preview width="320" height="170" style_bg_color="0xF0F3F8" />
+	</previews>
+
+	<styles>
+		<style name="style_main" bg_opa="0" radius="0" border_width="0" pad_all="0" />
+		<style name="style_selected" bg_color="0xC3E7FF" radius="100" border_width="0" pad_all="0" />
+		<style name="style_icon_container" bg_opa="0" pad_all="0" border_width="0" />
+		<style name="style_click_area" bg_opa="0" border_width="0" pad_all="0" />
+	</styles>
+
+	<animations>
+		<timeline name="menu_item_selected">
+			<animation target="rectangle_selected" prop="width" start="0" end="70" duration="100" />
+			<animation target="rectangle_selected" prop="opa" start="0" end="255" duration="50" />
+		</timeline>
+	</animations>
+
+	<api>
+		<prop name="text" type="string" default="Home" help="menu button text" />
+		<prop name="image" type="image" default="img_house" help="image of the manu button" />
+		<prop name="image_selected" type="image" default="img_house_selected" help="image to use when selected" />
+	</api>
+
+	<view name="menu_button" extends="lv_obj" width="70" height="49" scrollable="false" clickable="true">
+		<style name="style_main" />
+		<play_timeline_event timeline="menu_item_selected" trigger="clicked" target="rectangle_selected" />
+
+		<lv_obj
+			name="rectangle_selected"
+			width="70"
+			height="35"
+			scrollable="false"
+			align="top_mid"
+			hidden="false"
+			event_bubble="true"
+			clickable="false"
+		>
+			<style name="style_selected" />
+		</lv_obj>
+
+		<lv_obj name="icon_container" width="30" height="30" align="top_mid" y="3" event_bubble="true">
+			<style name="style_icon_container" />
+			<lv_image name="icon_normal" src="$image" align="center" />
+			<lv_image name="icon_selected" src="$image_selected" align="center" hidden="true" />
+		</lv_obj>
+
+		<lv_label
+			name="menu_title"
+			text="$text"
+			y="3"
+			align="bottom_mid"
+			style_text_font="font_inter_medium_14"
+			style_text_color="0x43474A"
+		/>
+	</view>
+</component>

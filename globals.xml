@@ -1,0 +1,50 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<!-- Add <px>, <int>, <color> etc here -->
+	</consts>
+
+	<styles>
+		<!-- Add <style> tags here -->
+	</styles>
+
+	<subjects>
+		<int name="subject_menu_index" value="0" min_value="0" max_value="4" help="the index of the menu bar" />
+		<string name="subject_menu_title" value="Home" help="text for the menu indicator label" />
+	</subjects>
+
+	<images>
+		<data name="img_house_selected" src_path="images/img_house_selected.png" color_format="rgb565a8" />
+		<data name="img_star_selected" src_path="images/img_star_selected.png" color_format="rgb565a8" />
+		<data name="img_person_selected" src_path="images/img_person_selected.png" color_format="rgb565a8" />
+		<data name="img_file_selected" src_path="images/img_file_selected.png" color_format="rgb565a8" />
+		<data name="img_house" src_path="images/img_house.png" color_format="rgb565a8" />
+		<data name="img_star" src_path="images/img_star.png" color_format="rgb565a8" />
+		<data name="img_person" src_path="images/img_person.png" color_format="rgb565a8" />
+		<data name="img_file" src_path="images/img_file.png" color_format="rgb565a8" />
+	</images>
+
+	<fonts>
+		<bin
+			name="font_inter_medium_14"
+			size="14"
+			bpp="4"
+			as_file="false"
+			range="0x20-0x7F"
+			symbols=""
+			src_path="fonts/Inter_18pt-Medium.ttf"
+		/>
+		<bin
+			name="font_inter_medium_27"
+			size="27"
+			bpp="4"
+			as_file="false"
+			range="0x20-0x7F"
+			symbols=""
+			src_path="fonts/Inter_18pt-Medium.ttf"
+		/>
+	</fonts>
+</globals>
