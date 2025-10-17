@@ -77,13 +77,6 @@ lv_obj_t * menu_button_create(lv_obj_t * parent, const char * text, const void *
     lv_obj_set_flag(menu_button, LV_OBJ_FLAG_SCROLLABLE, false);
     lv_obj_set_flag(menu_button, LV_OBJ_FLAG_CLICKABLE, true);
 
-
-    // create animation timeline(s)
-    lv_anim_timeline_t ** at_array = lv_malloc(sizeof(lv_anim_timeline_t *) * _MENU_BUTTON_TIMELINE_CNT);
-    at_array[MENU_BUTTON_TIMELINE_MENU_ITEM_SELECTED] = timeline_menu_item_selected_create(menu_button);
-    lv_obj_set_user_data(menu_button, at_array);
-    lv_obj_add_event_cb(menu_button, free_timeline_event_cb, LV_EVENT_DELETE, at_array);
-
     lv_obj_add_style(menu_button, &style_main, 0);
     lv_obj_t * rectangle_selected = lv_obj_create(menu_button);
     lv_obj_set_name(rectangle_selected, "rectangle_selected");
@@ -123,11 +116,18 @@ lv_obj_t * menu_button_create(lv_obj_t * parent, const char * text, const void *
     lv_obj_set_style_text_font(menu_title, font_inter_medium_14, 0);
     lv_obj_set_style_text_color(menu_title, lv_color_hex(0x43474A), 0);
     
+    
+    /* create animation timeline(s) */
+    lv_anim_timeline_t ** at_array = lv_malloc(sizeof(lv_anim_timeline_t *) * _MENU_BUTTON_TIMELINE_CNT);
+    at_array[MENU_BUTTON_TIMELINE_MENU_ITEM_SELECTED] = timeline_menu_item_selected_create(menu_button);
+    lv_obj_set_user_data(menu_button, at_array);
+    lv_obj_add_event_cb(menu_button, free_timeline_event_cb, LV_EVENT_DELETE, at_array);
+
     lv_obj_add_play_timeline_event(menu_button, LV_EVENT_CLICKED, menu_button_get_timeline(menu_button, MENU_BUTTON_TIMELINE_MENU_ITEM_SELECTED), 0, false);
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    lv_obj_set_name(menu_button, "menu_button_#");
+    lv_obj_set_name_static(menu_button, "menu_button_#");
 
     return menu_button;
 }
@@ -170,7 +170,7 @@ static lv_anim_timeline_t * timeline_menu_item_selected_create(lv_obj_t * obj)
     selector_and_prop = ((LV_STYLE_WIDTH & 0xff) << 24) | 0;
     lv_anim_init(&a);
     lv_anim_set_custom_exec_cb(&a, int_anim_exec_cb);
-    lv_anim_set_var(&a, "rectangle_selected");
+    lv_anim_set_var(&a, lv_obj_find_by_name(obj, "rectangle_selected"));
     lv_anim_set_values(&a, 0, 70);
     lv_anim_set_duration(&a, 100);
     lv_anim_set_user_data(&a, (void *)((uintptr_t)selector_and_prop));
@@ -179,7 +179,7 @@ static lv_anim_timeline_t * timeline_menu_item_selected_create(lv_obj_t * obj)
     selector_and_prop = ((LV_STYLE_OPA & 0xff) << 24) | 0;
     lv_anim_init(&a);
     lv_anim_set_custom_exec_cb(&a, int_anim_exec_cb);
-    lv_anim_set_var(&a, "rectangle_selected");
+    lv_anim_set_var(&a, lv_obj_find_by_name(obj, "rectangle_selected"));
     lv_anim_set_values(&a, 0, 255);
     lv_anim_set_duration(&a, 50);
     lv_anim_set_user_data(&a, (void *)((uintptr_t)selector_and_prop));

@@ -62,7 +62,7 @@ lv_obj_t * menubar_bg_create(lv_obj_t * parent)
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    lv_obj_set_name(lv_obj_0, "menubar_bg_#");
+    lv_obj_set_name_static(lv_obj_0, "menubar_bg_#");
 
     return lv_obj_0;
 }

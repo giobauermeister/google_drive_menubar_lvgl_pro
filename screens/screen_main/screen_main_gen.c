@@ -89,7 +89,7 @@ lv_obj_t * screen_main_create(void)
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    lv_obj_set_name(screen_main, "screen_main");
+    lv_obj_set_name_static(screen_main, "screen_main");
 
     return screen_main;
 }

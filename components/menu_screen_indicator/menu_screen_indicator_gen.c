@@ -53,7 +53,7 @@ lv_obj_t * menu_screen_indicator_create(lv_obj_t * parent)
 
     LV_TRACE_OBJ_CREATE("finished");
 
-    lv_obj_set_name(lv_label_0, "menu_screen_indicator_#");
+    lv_obj_set_name_static(lv_label_0, "menu_screen_indicator_#");
 
     return lv_label_0;
 }
