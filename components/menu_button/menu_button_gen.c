@@ -71,6 +71,7 @@ lv_obj_t * menu_button_create(lv_obj_t * parent, const char * text, const void *
     }
 
     lv_obj_t * menu_button = lv_obj_create(parent);
+    lv_obj_set_name_static(menu_button, "menu_button_#");
     lv_obj_set_name(menu_button, "menu_button");
     lv_obj_set_width(menu_button, 70);
     lv_obj_set_height(menu_button, 49);
@@ -126,8 +127,6 @@ lv_obj_t * menu_button_create(lv_obj_t * parent, const char * text, const void *
     lv_obj_add_play_timeline_event(menu_button, LV_EVENT_CLICKED, menu_button_get_timeline(menu_button, MENU_BUTTON_TIMELINE_MENU_ITEM_SELECTED), 0, false);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name_static(menu_button, "menu_button_#");
 
     return menu_button;
 }

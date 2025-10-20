@@ -47,13 +47,12 @@ lv_obj_t * menu_screen_indicator_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_label_0 = lv_label_create(parent);
+    lv_obj_set_name_static(lv_label_0, "menu_screen_indicator_#");
     lv_label_bind_text(lv_label_0, &subject_menu_title, NULL);
 
     lv_obj_add_style(lv_label_0, &style_main, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name_static(lv_label_0, "menu_screen_indicator_#");
 
     return lv_label_0;
 }

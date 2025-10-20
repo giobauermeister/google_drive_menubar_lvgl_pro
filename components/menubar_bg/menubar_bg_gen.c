@@ -54,6 +54,7 @@ lv_obj_t * menubar_bg_create(lv_obj_t * parent)
     }
 
     lv_obj_t * lv_obj_0 = lv_obj_create(parent);
+    lv_obj_set_name_static(lv_obj_0, "menubar_bg_#");
     lv_obj_set_width(lv_obj_0, 320);
     lv_obj_set_height(lv_obj_0, 69);
     lv_obj_set_align(lv_obj_0, LV_ALIGN_BOTTOM_MID);
@@ -61,8 +62,6 @@ lv_obj_t * menubar_bg_create(lv_obj_t * parent)
     lv_obj_add_style(lv_obj_0, &style_main, 0);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name_static(lv_obj_0, "menubar_bg_#");
 
     return lv_obj_0;
 }

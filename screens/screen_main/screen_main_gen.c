@@ -51,6 +51,7 @@ lv_obj_t * screen_main_create(void)
     }
 
     lv_obj_t * screen_main = lv_obj_create(NULL);
+    lv_obj_set_name_static(screen_main, "screen_main_#");
     lv_obj_set_name(screen_main, "screen_main");
     lv_obj_set_style_bg_color(screen_main, lv_color_hex(0xFFFFFF), 0);
 
@@ -88,8 +89,6 @@ lv_obj_t * screen_main_create(void)
     lv_obj_add_event_cb(screen_main, screen_main_loaded_cb, LV_EVENT_SCREEN_LOADED, NULL);
 
     LV_TRACE_OBJ_CREATE("finished");
-
-    lv_obj_set_name_static(screen_main, "screen_main");
 
     return screen_main;
 }
