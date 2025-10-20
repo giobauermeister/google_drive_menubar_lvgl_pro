@@ -4,6 +4,8 @@
 
 Developed in XML with LVGL Pro and a little bit of custom C code.
 
+You can test it online with LVGL Pro Online Viewer here: https://viewer.lvgl.io/?repo=https://github.com/giobauermeister/google_drive_menubar_lvgl_pro/tree/main
+
 Check it out running on ESP32-C6 Waveshare 1.9" Display:
 https://www.youtube.com/watch?v=5IYY1xQT7X8
 
