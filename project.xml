@@ -1,4 +1,4 @@
-<project>
+<project name="gdrive_menubar">
 	<targets>
 		<target name="target1">
 			<display width="320" height="170" />
